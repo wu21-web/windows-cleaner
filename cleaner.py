@@ -31,7 +31,7 @@ elif answer == "No":
 else:
     print("Choice not known.")
     exit(1)
-if os.path.exists(r"C:\Windows\temp"):
+if os.path.exists("C:\\Windows\\temp"):
     print("Will start in three seconds ...")
     time.sleep(3)
 else:
@@ -40,7 +40,7 @@ else:
 run = True
 
 # The path to the folder
-folder_path = r'C:\Windows\temp'
+folder_path = "C:\\Windows\\temp"
 
 if run:
     for filename in os.listdir(folder_path):
@@ -51,3 +51,15 @@ if run:
                 print(f"Deleted: {filename}")
             except Exception as e:
                 print(f"Error deleting {filename}: {e}")
+def get_folder_size(folder_path):
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(folder_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            if not os.path.islink(fp):
+                total_size += os.path.getsize(fp)
+    return total_size
+
+folder_path = 'C:\\Windows\\temp'
+folder_size = get_folder_size(folder_path)
+print(f"Total size of files in the folder: {folder_size} bytes.")

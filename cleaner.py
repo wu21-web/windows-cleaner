@@ -24,4 +24,14 @@ elif platform_system == 'Darwin':
 elif platform_system == 'Windows':
     print("This is Windows")
 run = False
-answer = easygui.buttonbox(msg="Are you going to start? Better close other applications.")
+answer = easygui.buttonbox(msg="Are you going to start? Better close other applications.", title="Confirm", choices=("Yes", "Not Now"), default_choice = "Yes", image=None, images=None)
+if answer == "Yes":
+    run = True
+elif answer == "No":
+    exit(0)
+else:
+    print("Choice not known.")
+    exit(0)
+if os.listdir("C:/Windows/temp"):
+    pass
+    

@@ -31,7 +31,7 @@ elif answer == "No":
 else:
     print("Choice not known.")
     exit(1)
-if os.path.exists("C:\\Windows\\temp"):
+if os.path.exists("C:\\Windows\\Temp"):
     print("Will start in three seconds ...")
     time.sleep(3)
 else:
@@ -40,9 +40,9 @@ else:
 run = True
 
 # The path to the folder
-folder_path = "C:\\Windows\\temp"
+folder_path = "C:\\Windows\Temp"
 
-if ru and is_windows:
+if run and is_windows:
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         if os.path.isfile(file_path):
@@ -60,6 +60,6 @@ def get_folder_size(folder_path):
                 total_size += os.path.getsize(fp)
     return total_size
 
-folder_path = 'C:\\Windows\\temp'
+folder_path = 'C:\\Windows\\Temp'
 folder_size = get_folder_size(folder_path)
 print(f"Total size of files in the folder: {folder_size} bytes.")

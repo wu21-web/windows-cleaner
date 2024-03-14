@@ -42,7 +42,7 @@ run = True
 # The path to the folder
 folder_path = "C:\\Windows\\temp"
 
-if run:
+if ru and is_windows:
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         if os.path.isfile(file_path):
